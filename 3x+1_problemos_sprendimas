@@ -1,0 +1,22 @@
+<?php
+
+$sk = 20;
+$iteracija = 1;
+
+while ($sk != 1) {
+    echo $sk . "\n";
+
+    if ($sk % 2 == 0) {
+        $sk = $sk / 2;
+      } 
+    else {
+        $sk = 3 * $sk + 1;
+    }
+
+    $iteracija++;
+}
+
+echo "1 \n";
+echo "iteraciju kiekis - " . $iteracija;
+
+?>
