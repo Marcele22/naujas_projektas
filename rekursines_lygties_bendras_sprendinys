@@ -1,0 +1,27 @@
+from sympy import Function, Eq, symbols, rsolve, solve, simplify
+import time
+
+
+n = symbols('n', integer=True)
+k = symbols('k', integer=True)
+
+a = Function('a')
+pradzia = k*n*3**n
+dalyba = 3**n-3
+
+poliLygtis = Eq(pradzia,  6*k*(n-1)*3**(n-1) - 12*k*(n-2)*3**(n-2) + 9*k*(n-3)*3**(n-3) + 3**n)
+homoLygtis = Eq(a(n), 6*a(n-1) - 12*a(n-2) + 9*a(n-3) + 3**n)
+
+dalinaLygtis = Eq(poliLygtis.lhs / dalyba, poliLygtis.rhs / dalyba)
+paprasLygtis = simplify(dalinaLygtis)
+
+
+
+rezultatas_1 = rsolve(homoLygtis, a(n))
+kReiksme = solve(paprasLygtis, k)
+rezultatas_2 = pradzia.subs(k, kReiksme[0]) 
+
+
+
+print("bendrasis sprendinys - ", rezultatas_1, "+", rezultatas_2)
+time.sleep(15) 
