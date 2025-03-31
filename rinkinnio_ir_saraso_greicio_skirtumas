@@ -1,0 +1,19 @@
+import time
+
+def elementas(kintamasis):
+    for i in range(5000):
+        if i in kintamasis:
+            pass
+
+rinkinys = set(range(10000000))
+
+sarasas = list(range(10000000))
+
+pradzia = time.time()
+elementas(rinkinys)
+print(f"rinkinys {time.time() - pradzia} sekundes")
+
+pradzia = time.time()
+elementas(sarasas)
+print(f"sarasas: {time.time() - pradzia} sekundes")
+
